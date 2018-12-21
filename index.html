@@ -24,23 +24,32 @@
         
 
             <div class="results">
-                <span class="reultType">Wins</span>
-                <span class="reultType">Ties</span>
-                <span class="reultType">Wins</span>
+
+                <div class="resultType">
+                    <p>Wins</p>
+                    <p class="resultNumber" id="userWins">0</p>
+                </div>
+
+
+                <div class="resultType">
+                    <p>Ties</p>
+                    <p class="resultNumber" id="ties">0</p>
+                </div>
+
+
+                <div class="resultType">
+                    <p>Wins</p>
+                <p class="resultNumber" id="cpuWins">0</p></div>
             </div>
             
             
-            <div class="resultsNumbers">
-                <span class="reultNumber">0</span>
-                <span class="reultNumber">0</span>
-                <span class="reultNumber">0</span>
-            </div>
+            
 
             <section class="plays">
 
                     <div class="userPlay">
                 
-                
+                            <img id="ut" src="images/ut.png">
                             <img id="paper" src="images/paper.png">
                             <img id="rock" src="images/rock.png">
                             <img id="scissors" src="images/scissors.png">
@@ -52,7 +61,7 @@
             
                         <div class="cpuPlay">
                             
-                            
+                                <img id="ct" src="images/ct.png">
                                 <img id="paperCPU" src="images/paper.png">
                                 <img id="rockCPU" src="images/rock.png">
                                 <img id="scissorsCPU" src="images/scissors.png">
@@ -62,8 +71,10 @@
 
             </section>
 
+            <button id="play">Play</button>
+
             
-        </section>
+        
 
 
 

@@ -1,15 +1,22 @@
-.userPlay {
-    border: 1px solid black;
+@font-face {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  } 
+
+body {
+    text-transform: capitalize;
+    background-image: url(images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: ;height: 100vh;
+    font-family: Product Sans;
     
 }
 
-.cpuPlay {
-    border: 1px solid black;
-}
-
-
 #rock {
-    display: block;
+    display: none;
 }
 
 #paper {
@@ -21,7 +28,7 @@
 }
 
 #scissorsCPU {
-    display: block;
+    display: none;
 }
 
 #rockCPU {
@@ -34,7 +41,24 @@
 
 button {
     padding: 10px;
-    margin: 10px;
+    margin: 10px 10px;
+    background: #ffc600;
+    color: white;
+    border: none;
+    font-size: 15px;
+    text-shadow: .5px .5px .5px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+
+
+}
+
+button#play {
+    margin: 0 auto;
+    width: 200px;
+    background: #757575;
+    color: white;
+    border: none;
+    font-size: 20px;
 }
 
 .plays {
@@ -54,23 +78,32 @@ button {
 
 img {
     margin: 0 auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 
 header {
-    margin: -10px;
+    margin-top: -20px;
     text-align: center;
     font-size: 30px;
     font-weight: bolder;
+    color: #ffbf00;
+    text-shadow: .5px .5px .5px rgba(0, 0, 0, 0.3);
 }
 
 .round {
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f50057;
+    text-shadow: .5px .5px .5px rgba(0, 0, 0, 0.3);
+
 }
 
 .results {
@@ -81,5 +114,19 @@ header {
 .resultsNumbers {
     display: flex;
     justify-content: space-evenly;
+}
+
+.resultType {
+    text-align: center;
+}
+
+.results {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.results .resultNumber {
+    color: gray;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
