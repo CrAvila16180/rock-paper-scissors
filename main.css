@@ -1,0 +1,85 @@
+.userPlay {
+    border: 1px solid black;
+    
+}
+
+.cpuPlay {
+    border: 1px solid black;
+}
+
+
+#rock {
+    display: block;
+}
+
+#paper {
+    display: none;
+}
+
+#scissors {
+    display: none;
+}
+
+#scissorsCPU {
+    display: block;
+}
+
+#rockCPU {
+    display: none;
+}
+
+#paperCPU {
+    display: none;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+}
+
+.plays {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-between;
+    
+}
+
+.plays > * {
+    
+    padding: 10px;
+    max-width: 350px;
+    text-align: center;
+    flex: 1;
+}
+
+img {
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header {
+    margin: -10px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.round {
+    text-align: center;
+}
+
+.results {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.resultsNumbers {
+    display: flex;
+    justify-content: space-evenly;
+}
+
