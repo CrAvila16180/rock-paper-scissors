@@ -38,19 +38,19 @@ let caseWin = () => {
  userWins += 1;
  winCounter.textContent = userWins; 
  textResult.textContent = 'You won';  
-}
+};
 
 let caseTie = () => {
     ties += 1;
     tiesCounter.textContent = ties;
     textResult.textContent = "It's a tie";
-}
+};
 
 let caseLose = () => {
     cpuWins += 1;
     cpuCounter.textContent = cpuWins;
     textResult.textContent = 'You lost';
-}
+};
 
 //Possible outcomes
 
@@ -77,14 +77,14 @@ let playRound = (userSelection,cpuSelection) => {
     } else {
         return console.error('Todo se derrumbó xd');
         
-    }
+    };
 
 
 };
 
 emptyText();
 
-round.textContent = `Round ${counter}`
+round.textContent = `Round ${counter}`;
 
 
 let playerChoice = "";
@@ -97,28 +97,28 @@ const toggleRockCPU = () => {
     imgPaperCpu.style.display = 'none';
     imgScissorsCpu.style.display = 'none';
     imgCt.style.display = 'none';
-}
+};
 
 const togglePaperCPU = () => {
     imgRockCpu.style.display = 'none';
     imgPaperCpu.style.display = 'block';
     imgScissorsCpu.style.display = 'none';
     imgCt.style.display = 'none';
-}
+};
 
 const toggleScissorsCPU = () => {
     imgRockCpu.style.display = 'none';
     imgPaperCpu.style.display = 'none';
     imgScissorsCpu.style.display = 'block';
     imgCt.style.display = 'none';
-}
+};
 
 const toggleBlanckCPU = () => {
     imgRockCpu.style.display = 'none';
     imgPaperCpu.style.display = 'none';
     imgScissorsCpu.style.display = 'none';
     imgCt.style.display = 'block';
-}
+};
 
 
 const toggleCPUImages = (cpuPlay) => {
@@ -163,14 +163,14 @@ const toggleUserImages = (playerChoice) => {
     } else if(playerChoice == 'scissors'){
         toggleScissors();
     } else {return};
-}
+};
 
 //Set User Choice
 const setChoice = (e) => {
     playerChoice = e.target.getAttribute('data-choice');
 
     toggleUserImages(playerChoice);  
-}
+};
 
 //Button functions
 
