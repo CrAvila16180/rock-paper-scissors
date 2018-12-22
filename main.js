@@ -196,7 +196,7 @@ btnScissors.addEventListener('click', function(e){
 
 playButton.addEventListener('click', cpuChoice = () => {
     if(!playerChoice){
-        alert('No seas perr@, escojé algo -_-') 
+        alert('No seas perr@, escogé algo -_-') 
         return;
     }
     let cpuOptions = ['rock', 'paper', 'scissors'];
