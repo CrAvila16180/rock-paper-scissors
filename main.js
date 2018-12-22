@@ -20,6 +20,9 @@ let round = document.querySelector('.round');
 let winCounter = document.querySelector('#userWins');
 let tiesCounter = document.querySelector('#ties');
 let cpuCounter = document.querySelector('#cpuWins');
+let textResult = document.querySelector('.textResult');
+const emptyText = () => textResult.textContent = '';
+
 
 let cpuWins = 0;
 let ties = 0;
@@ -30,17 +33,20 @@ let counter = 1;
 
 let caseWin = () => {
  userWins += 1;
- winCounter.textContent = userWins;   
+ winCounter.textContent = userWins; 
+ textResult.textContent = 'You won';  
 }
 
 let caseTie = () => {
     ties += 1;
     tiesCounter.textContent = ties;
+    textResult.textContent = "It's a tie";
 }
 
 let caseLose = () => {
     cpuWins += 1;
     cpuCounter.textContent = cpuWins;
+    textResult.textContent = 'You lost';
 }
 
 //Possible outcomes
@@ -73,6 +79,7 @@ let playRound = (userSelection,cpuSelection) => {
 
 }
 
+emptyText();
 
 round.textContent = `Round ${counter}`
 
@@ -180,6 +187,7 @@ const setChoice = (e) => {
 btnRock.addEventListener('click', function(e){
     setChoice(e);
     toggleBlanckCPU();
+    emptyText();
     
     
 });
@@ -187,11 +195,13 @@ btnRock.addEventListener('click', function(e){
 btnPaper.addEventListener('click', function(e){
     setChoice(e);
     toggleBlanckCPU();
+    emptyText();
 });
 
 btnScissors.addEventListener('click', function(e){
     setChoice(e);
     toggleBlanckCPU();
+    emptyText();
 });
 
 playButton.addEventListener('click', cpuChoice = () => {
