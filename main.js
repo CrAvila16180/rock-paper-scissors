@@ -17,7 +17,63 @@ const imgScissorsCpu = document.querySelector('#scissorsCPU');
 const imgCt = document.querySelector('#ct');
 
 let round = document.querySelector('.round');
+let winCounter = document.querySelector('#userWins');
+let tiesCounter = document.querySelector('#ties');
+let cpuCounter = document.querySelector('#cpuWins');
+
+let cpuWins = 0;
+let ties = 0;
+let userWins = 0;
 let counter = 1;
+
+//Results 
+
+let caseWin = () => {
+ userWins += 1;
+ winCounter.textContent = userWins;   
+}
+
+let caseTie = () => {
+    ties += 1;
+    tiesCounter.textContent = ties;
+}
+
+let caseLose = () => {
+    cpuWins += 1;
+    cpuCounter.textContent = cpuWins;
+}
+
+//Possible outcomes
+
+let playRound = (userSelection,cpuSelection) => {
+
+    if(userSelection == 'rock' && cpuSelection == 'rock'){
+        caseTie();
+    } else if(userSelection == 'rock' && cpuSelection == 'paper'){
+        caseLose();
+    } else if(userSelection == 'rock' && cpuSelection == 'scissors'){
+        caseWin();
+    } else if(userSelection == 'paper' && cpuSelection == 'rock'){
+        caseWin();
+    } else if(userSelection == 'paper' && cpuSelection == 'paper'){
+        caseTie();
+    } else if(userSelection == 'paper' && cpuSelection == 'scissors'){
+        caseLose();
+    } else if(userSelection == 'scissors' && cpuSelection == 'rock'){
+        caseLose();
+    } else if(userSelection == 'scissors' && cpuSelection == 'paper'){
+        caseWin();
+    } else if(userSelection == 'scissors' && cpuSelection == 'scissors'){
+        caseTie();
+    } else {
+        return console.error('Todo se derrumbó xd');
+        
+    }
+
+
+}
+
+
 round.textContent = `Round ${counter}`
 
 
@@ -108,6 +164,8 @@ const toggleUserImages = (playerChoice) => {
 
 
 
+
+
 //Set User Choice
 const setChoice = (e) => {
     playerChoice = e.target.getAttribute('data-choice');
@@ -123,6 +181,7 @@ btnRock.addEventListener('click', function(e){
     setChoice(e);
     toggleBlanckCPU();
     
+    
 });
 
 btnPaper.addEventListener('click', function(e){
@@ -136,6 +195,10 @@ btnScissors.addEventListener('click', function(e){
 });
 
 playButton.addEventListener('click', cpuChoice = () => {
+    if(!playerChoice){
+        alert('No seas perr@, escojé algo -_-') 
+        return;
+    }
     let cpuOptions = ['rock', 'paper', 'scissors'];
     let cpuPlay = cpuOptions[Math.floor(Math.random()*cpuOptions.length)]
     log(cpuPlay);
@@ -144,6 +207,8 @@ playButton.addEventListener('click', cpuChoice = () => {
     counter += 1; 
     round.textContent = `Round ${counter}`
     log(round);
+
+    playRound(playerChoice,cpuPlay);
 
 });
 
