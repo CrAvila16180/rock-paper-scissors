@@ -1,5 +1,3 @@
-const log = (content) => console.log(content)
-
 const btnRock = document.querySelector('#btnRock');
 const btnPaper = document.querySelector('#btnPaper');
 const btnScissors = document.querySelector('#btnScissors');
@@ -22,6 +20,11 @@ let tiesCounter = document.querySelector('#ties');
 let cpuCounter = document.querySelector('#cpuWins');
 let textResult = document.querySelector('.textResult');
 const emptyText = () => textResult.textContent = '';
+
+const updateRound = () => {
+    counter += 1; 
+    round.textContent = `Round ${counter}`
+};
 
 
 let cpuWins = 0;
@@ -77,7 +80,7 @@ let playRound = (userSelection,cpuSelection) => {
     }
 
 
-}
+};
 
 emptyText();
 
@@ -128,14 +131,7 @@ const toggleCPUImages = (cpuPlay) => {
     } else {
         return;
     }
-}
-
-
-
-
-
-
-
+};
 
 //User Images toggling
 const toggleRock = () => {
@@ -169,17 +165,11 @@ const toggleUserImages = (playerChoice) => {
     } else {return};
 }
 
-
-
-
-
 //Set User Choice
 const setChoice = (e) => {
     playerChoice = e.target.getAttribute('data-choice');
 
-    toggleUserImages(playerChoice);
-
-    log(playerChoice);
+    toggleUserImages(playerChoice);  
 }
 
 //Button functions
@@ -188,8 +178,6 @@ btnRock.addEventListener('click', function(e){
     setChoice(e);
     toggleBlanckCPU();
     emptyText();
-    
-    
 });
 
 btnPaper.addEventListener('click', function(e){
@@ -211,15 +199,9 @@ playButton.addEventListener('click', cpuChoice = () => {
     }
     let cpuOptions = ['rock', 'paper', 'scissors'];
     let cpuPlay = cpuOptions[Math.floor(Math.random()*cpuOptions.length)]
-    log(cpuPlay);
-
     toggleCPUImages(cpuPlay);
-    counter += 1; 
-    round.textContent = `Round ${counter}`
-    log(round);
-
+    updateRound();
     playRound(playerChoice,cpuPlay);
-
 });
 
 
