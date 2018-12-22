@@ -11,17 +11,42 @@ const imgPaper = document.querySelector('#paper');
 const imgScissors = document.querySelector('#scissors');
 const imgUt = document.querySelector('#ut');
 
+const imgRockCpu = document.querySelector('#rockCPU');
+const imgPaperCpu = document.querySelector('#paperCPU');
+const imgScissorsCpu = document.querySelector('#scissorsCPU');
+const imgCt = document.querySelector('#ct');
 
 
 
 let playerChoice = "";
 
-let getcpuChoice = () => {
-    const cpuOptions = ['rock','paper','scissors'];
-    let cpuChoice = cpuOptions[Math.floor(Math.random()*cpuOptions.length)];
-    return cpuChoice;
+
+const toggleRockCPU = () => {
+    imgRockCpu.style.display = 'block';
+    imgPaperCpu.style.display = 'none';
+    imgScissorsCpu.style.display = 'none';
+    imgCt.style.display = 'none';
 }
 
+const togglePaperCPU = () => {
+    imgRockCpu.style.display = 'none';
+    imgPaperCpu.style.display = 'block';
+    imgScissorsCpu.style.display = 'none';
+    imgCt.style.display = 'none';
+}
+
+const toggleScissorsCPU = () => {
+    imgRockCpu.style.display = 'none';
+    imgPaperCpu.style.display = 'none';
+    imgScissorsCpu.style.display = 'block';
+    imgCt.style.display = 'none';
+}
+
+
+
+
+
+//User Images toggling
 const toggleRock = () => {
     imgRock.style.display = 'block';
     imgPaper.style.display = 'none';
@@ -43,7 +68,7 @@ const toggleScissors = () => {
     imgUt.style.display = 'none';
 };
 
-const toggleImages = (playerChoice) => {
+const toggleUserImages = (playerChoice) => {
     if(playerChoice == 'rock'){
         toggleRock();
     }  else if(playerChoice == 'paper'){
@@ -55,19 +80,20 @@ const toggleImages = (playerChoice) => {
 
 
 
-
+//Set User Choice
 const setChoice = (e) => {
     playerChoice = e.target.getAttribute('data-choice');
 
-    toggleImages(playerChoice);
+    toggleUserImages(playerChoice);
 
     log(playerChoice);
 }
 
-
+//Button functions
 
 btnRock.addEventListener('click', function(e){
     setChoice(e);
+    
 });
 
 btnPaper.addEventListener('click', function(e){
@@ -79,10 +105,7 @@ btnScissors.addEventListener('click', function(e){
 });
 
 
-playButton.addEventListener('click', function(e){
-    
-    log(getcpuChoice());
-});
+
 
 
 
