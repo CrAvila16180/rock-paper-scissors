@@ -4,12 +4,23 @@ const btnRock = document.querySelector('#btnRock');
 const btnPaper = document.querySelector('#btnPaper');
 const btnScissors = document.querySelector('#btnScissors');
 
+const playButton = document.querySelector('#play');
+
 const imgRock = document.querySelector('#rock');
 const imgPaper = document.querySelector('#paper');
 const imgScissors = document.querySelector('#scissors');
 const imgUt = document.querySelector('#ut');
 
+
+
+
 let playerChoice = "";
+
+let getcpuChoice = () => {
+    const cpuOptions = ['rock','paper','scissors'];
+    let cpuChoice = cpuOptions[Math.floor(Math.random()*cpuOptions.length)];
+    return cpuChoice;
+}
 
 const toggleRock = () => {
     imgRock.style.display = 'block';
@@ -47,12 +58,10 @@ const toggleImages = (playerChoice) => {
 
 const setChoice = (e) => {
     playerChoice = e.target.getAttribute('data-choice');
+
     toggleImages(playerChoice);
+
     log(playerChoice);
-
-    
-
-
 }
 
 
@@ -69,6 +78,11 @@ btnScissors.addEventListener('click', function(e){
     setChoice(e);
 });
 
+
+playButton.addEventListener('click', function(e){
+    
+    log(getcpuChoice());
+});
 
 
 
