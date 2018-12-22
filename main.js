@@ -16,10 +16,15 @@ const imgPaperCpu = document.querySelector('#paperCPU');
 const imgScissorsCpu = document.querySelector('#scissorsCPU');
 const imgCt = document.querySelector('#ct');
 
+let round = document.querySelector('.round');
+let counter = 1;
+round.textContent = `Round ${counter}`
 
 
 let playerChoice = "";
 
+
+//CPU Imgaes toggling
 
 const toggleRockCPU = () => {
     imgRockCpu.style.display = 'block';
@@ -41,6 +46,29 @@ const toggleScissorsCPU = () => {
     imgScissorsCpu.style.display = 'block';
     imgCt.style.display = 'none';
 }
+
+const toggleBlanckCPU = () => {
+    imgRockCpu.style.display = 'none';
+    imgPaperCpu.style.display = 'none';
+    imgScissorsCpu.style.display = 'none';
+    imgCt.style.display = 'block';
+}
+
+
+const toggleCPUImages = (cpuPlay) => {
+    if(cpuPlay == 'rock'){
+        toggleRockCPU();
+    } else if(cpuPlay == 'paper'){
+        togglePaperCPU();
+    } else if(cpuPlay == 'scissors'){
+        toggleScissorsCPU();
+    } else {
+        return;
+    }
+}
+
+
+
 
 
 
@@ -93,16 +121,33 @@ const setChoice = (e) => {
 
 btnRock.addEventListener('click', function(e){
     setChoice(e);
+    toggleBlanckCPU();
     
 });
 
 btnPaper.addEventListener('click', function(e){
     setChoice(e);
+    toggleBlanckCPU();
 });
 
 btnScissors.addEventListener('click', function(e){
     setChoice(e);
+    toggleBlanckCPU();
 });
+
+playButton.addEventListener('click', cpuChoice = () => {
+    let cpuOptions = ['rock', 'paper', 'scissors'];
+    let cpuPlay = cpuOptions[Math.floor(Math.random()*cpuOptions.length)]
+    log(cpuPlay);
+
+    toggleCPUImages(cpuPlay);
+    counter += 1; 
+    round.textContent = `Round ${counter}`
+    log(round);
+
+});
+
+
 
 
 
