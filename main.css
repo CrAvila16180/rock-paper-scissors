@@ -88,8 +88,12 @@ button#play {
     color: #f50057;
     font-weight: bold;
     font-size: 30px;
-    align-self: center;
-    flex: 1;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     max-width: 150px;
 }
 
@@ -174,6 +178,37 @@ header {
     color: gray;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
+
+
+@media all and (max-width: 1000px){
+    body {
+        background-repeat: repeat;
+    }
+    
+    .wrapper {
+        margin-top: -10%;
+    }
+    .wrapper > * {
+
+        
+        transform: scale(0.9);
+    }
+}
+
+@media all and (max-width: 500px){
+    body > * {
+        
+        transform: scale(0.55);
+    }
+
+    .wrapper {
+        margin-top: -100px;
+        flex-direction: column;
+    }
+
+    
+}
+
 
 
 
