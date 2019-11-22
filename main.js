@@ -194,7 +194,7 @@ btnScissors.addEventListener('click', function(e){
 
 playButton.addEventListener('click', cpuChoice = () => {
     if(!playerChoice){
-        alert('No seas perr@, escogé algo -_-') 
+        alert('Por favor elige una opción antes de jugar.') 
         return;
     }
     let cpuOptions = ['rock', 'paper', 'scissors'];
